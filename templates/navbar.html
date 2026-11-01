@@ -1,0 +1,44 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark');
+        }
+    </script>
+
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login/">Login</a>
+            <a href="/register/">Register</a>
+
+
+            <button id="theme-toggle" style="margin-left: 15px; cursor: pointer;">Тема</button>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+
+    {% block extra_js %}{% endblock %}
+
+
+    <script src="{% static 'js/theme.js' %}"></script>
+</body>
+</html>

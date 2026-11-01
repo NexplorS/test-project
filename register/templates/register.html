@@ -1,0 +1,12 @@
+{% extends "navbar.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <h1>Registration</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ register }}
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}
